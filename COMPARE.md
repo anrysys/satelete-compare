@@ -99,6 +99,25 @@
 - SEO штрафы за compromised content
 - Потеря данных при успешных атаках
 
+📊 **GDPR Compliance:**
+
+🟡 **Частичная поддержка** - требует дополнительной настройки:
+
+- ✅ WordPress Core: встроенные Privacy Tools (с версии 4.9.6)
+- ✅ Автоматическое удаление персональных данных по запросу
+- ✅ Export персональных данных в машиночитаемом формате
+- ✅ Cookie consent через плагины (Cookie Notice, Complianz)
+- ❌ Плагины требуют индивидуальной проверки на GDPR compliance
+- ❌ Многие legacy плагины не соответствуют GDPR
+- ❌ Необходима настройка data retention политик вручную
+- ❌ Tracking и аналитика требуют дополнительных privacy плагинов
+
+🔧 **Требуемые доработки:**
+- Настройка GDPR-compliant cookie banners
+- Аудит всех плагинов на соответствие privacy требованиям
+- Настройка data processing agreements с третьими сторонами
+- Документирование data flow и storage policies
+
 **Максимальная масштабируемость:** 🚧 **50-200 сайтов** (ограничено архитектурой MySQL и WordPress Core)
 
 **DDoS устойчивость:** 🛡️ **Низкая** - максимум 1-5 Gbps атак с Cloudflare, без него - критично уязвим
@@ -212,6 +231,25 @@
 - Требует постоянного мониторинга security advisories
 - Меньше security tooling по сравнению с PHP экосистемой
 
+📊 **GDPR Compliance:**
+
+🟢 **Хорошая поддержка** - современная архитектура с privacy-first подходом:
+
+- ✅ Built-in data encryption и secure authentication
+- ✅ Гранулярные права доступа через RBAC систему
+- ✅ Автоматическое логирование всех data access operations
+- ✅ TypeScript type safety для data handling
+- ✅ Configurable data retention policies через код
+- ❌ Нет built-in cookie consent management
+- ❌ Privacy policy generator требует кастомной реализации
+- ❌ Data export/import tools требуют разработки
+
+🔧 **Требуемые доработки:**
+- Разработка GDPR-compliant API endpoints для data requests
+- Интеграция с cookie consent решениями
+- Настройка automated data purging workflows
+- Документирование data processing procedures
+
 **Максимальная масштабируемость:** 🔄 **100-500 сайтов** (ограничено MongoDB и отсутствием распределенной архитектуры)
 
 **DDoS устойчивость:** 🛡️ **Умеренная** - до 10-20 Gbps с правильной Kubernetes настройкой + load balancing
@@ -320,6 +358,25 @@
 - Регулярные penetration tests (ежеквартально)
 - Compliance audits для GDPR/SOC2 если требуется
 - 24/7 мониторинг с alerting при подозрительной активности
+
+📊 **GDPR Compliance:**
+
+🟢 **Отличная поддержка** - enterprise-ready с встроенными privacy features:
+
+- ✅ Built-in data audit trails и access logging
+- ✅ Автоматическая data anonymization через plugins
+- ✅ PostgreSQL row-level security для data isolation
+- ✅ GDPR plugin marketplace с готовыми решениями
+- ✅ API endpoints для data export/delete requests
+- ✅ Configurable data retention policies
+- ✅ Cookie consent integration через plugins (CookieHub, Complianz)
+- ❌ Privacy impact assessments требуют manual documentation
+
+🔧 **Enterprise GDPR features:**
+- Data Processing Agreements templates
+- Automated breach notification workflows
+- Data mapping и flow documentation tools
+- Integration с external privacy management platforms
 
 **Максимальная масштабируемость:** 📈 **200-800 сайтов** (лучше чем Payload благодаря PostgreSQL, но ограничено отсутствием gRPC)
 
@@ -435,6 +492,25 @@
 - Необходимость migration плана при смене provider
 - Compliance зависит от Sanity политик, не под вашим контролем
 
+📊 **GDPR Compliance:**
+
+🟢 **Превосходная поддержка** - managed service с полным compliance:
+
+- ✅ GDPR compliance из коробки (EU data residency)
+- ✅ Автоматическое data processing agreements (DPA)
+- ✅ Built-in data export в portable форматах
+- ✅ Right to be forgotten через API
+- ✅ Audit trails для всех data access operations
+- ✅ Cookie-less tracking options
+- ✅ Privacy-first architecture по умолчанию
+- ✅ Data breach notification procedures включены в SLA
+
+🔧 **Managed GDPR features:**
+- Automated data retention и purging
+- Privacy policy generator и consent management
+- Data processing impact assessments support
+- Regular compliance audits (Sanity ответственность)
+
 **Максимальная масштабируемость:** 🚀 **500-2000 сайтов** (благодаря Cloud-native архитектуре, но дорого для больших объемов)
 
 **DDoS устойчивость:** 🛡️ **Отличная** - до 200+ Gbps благодаря глобальной CDN и автомасштабированию Sanity Cloud
@@ -547,6 +623,25 @@
 - Мониторинг и alerting должны быть настроены вручную
 - Требует экспертизы по security hardening SQL БД
 - Self-hosted означает полную ответственность за compliance
+
+📊 **GDPR Compliance:**
+
+🟡 **Хорошая основа** - требует правильной настройки и конфигурации:
+
+- ✅ Database-agnostic подход позволяет выбрать GDPR-ready БД
+- ✅ Granular permissions system для data access control
+- ✅ Audit logging всех database operations
+- ✅ API endpoints для automated data management
+- ✅ Field-level encryption для sensitive data
+- ❌ Нет built-in cookie consent management
+- ❌ Data retention policies требуют custom implementation
+- ❌ Privacy tools требуют разработки или интеграции
+
+🔧 **Требуемая настройка:**
+- Конфигурация database-specific GDPR features
+- Разработка data export/delete API endpoints
+- Интеграция с external privacy management tools
+- Настройка automated compliance workflows
 
 **Максимальная масштабируемость:** 📊 **300-1000 сайтов** (отличная база для масштабирования, но нет встроенного распределения)
 
@@ -676,6 +771,26 @@
 - Incident response planning для microservices failures
 - Security training для всей команды по cloud-native security
 
+📊 **GDPR Compliance:**
+
+🟢 **Максимальный контроль** - полностью кастомизируемая privacy-by-design архитектура:
+
+- ✅ Privacy-by-design встроен в каждый микросервис
+- ✅ Distributed data sovereignty с geographic data isolation
+- ✅ Real-time data lineage tracking через all microservices
+- ✅ Automated data retention и purging policies
+- ✅ Granular consent management на уровне API
+- ✅ Cryptographic data anonymization capabilities
+- ✅ Built-in data portability и export functions
+- ✅ Comprehensive audit trails across distributed systems
+
+🔧 **Advanced GDPR capabilities:**
+- Custom privacy impact assessment automation
+- Data processing agreements generator
+- Automated breach detection и notification
+- AI-powered data classification и sensitivity analysis
+- Multi-jurisdictional compliance support (CCPA, GDPR, etc.)
+
 **Максимальная масштабируемость:** 🏆 **10,000+ сайтов** (неограниченное горизонтальное масштабирование с распределенными БД и gRPC)
 
 **DDoS устойчивость:** 🛡️ **Максимальная** - 1+ Tbps благодаря микросервисам, auto-scaling, распределенной архитектуре
@@ -715,6 +830,7 @@
 | **gRPC Support**               | ❌                      | ❌                     | ❌                      | ❌                       | ❌                     | ✅ Встроен                        |
 | **Максимальное кол-во сайтов** | 50-200                  | 100-500                | 200-800                 | 500-2000                 | 300-1000               | 10,000+                           |
 | **Безопасность и обновления**  | ⭐⭐ Высокие риски      | ⭐⭐⭐ Стандартная     | ⭐⭐⭐⭐ Enterprise     | ⭐⭐⭐⭐⭐ Автоматическая | ⭐⭐⭐ Гибкая          | ⭐⭐⭐⭐⭐ Максимальная          |
+| **GDPR Compliance**            | 🟡 Частичная            | 🟢 Хорошая             | 🟢 Отличная             | 🟢 Превосходная          | 🟡 Хорошая основа      | 🟢 Максимальный контроль         |
 | **Лицензирование**             | GPL v2/v3               | MIT                    | MIT/Enterprise          | Freemium SaaS            | GPL v3/Pro             | Собственное                       |
 
 ## 📊 Сводка по масштабируемости
@@ -774,5 +890,28 @@
 2. **Payload/Strapi/Directus**: Умеренные требования к DevSecOps (ежемесячно)
 3. **Sanity**: Минимальные требования (managed security)
 4. **Кастомная система**: Максимальные возможности, но требует экспертизы в команде
+
+### 🛡️ По требованиям GDPR compliance
+
+**Минимальные требования к privacy (публичный контент, маркетинговые сайты):**
+
+- Sanity (автоматическая GDPR compliance, managed service)
+- WordPress (с дополнительной настройкой и плагинами)
+
+**Стандартные требования privacy (бизнес-приложения, пользовательские данные):**
+
+- Strapi (enterprise-готовые GDPR возможности)
+- Payload CMS (modern privacy-first архитектура)
+
+**Высокие требования privacy (финансы, медицина, персональные данные):**
+
+- Кастомная система (максимальный контроль, privacy-by-design)
+- Directus (гибкая настройка под специфические требования)
+
+**Критические privacy требования (государственные услуги, EU compliance):**
+
+- Кастомная система (полная data sovereignty)
+- Sanity с EU data residency (если бюджет позволяет)
+- ⚠️ WordPress НЕ рекомендуется для строгих privacy требований
 
 Completed (3/3) _Document new candidates with specifications_
